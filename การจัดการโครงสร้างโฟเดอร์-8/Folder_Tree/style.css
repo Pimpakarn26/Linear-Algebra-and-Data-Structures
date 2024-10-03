@@ -1,0 +1,71 @@
+.folder, .file {
+    margin-left: 20px;
+}
+
+.folder::before, .file::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-size: cover;
+}
+
+.folder::before {
+    background-image: url('./img/1.png');
+}
+
+.file::before {
+    background-image: url('./img/11.png');
+}
+/* style.css */
+
+/* Folder and File Styles */
+#folderTree {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.folder, .file {
+    margin-bottom: 5px;
+}
+
+.folder i {
+    margin-right: 5px;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+form button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Button Styles */
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #74aa1d;
+}
+
+/* Icon Styles */
+i {
+    margin-right: 5px;
+}
+

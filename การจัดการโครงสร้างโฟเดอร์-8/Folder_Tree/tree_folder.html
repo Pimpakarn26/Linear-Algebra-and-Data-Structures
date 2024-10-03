@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folder Structure Tree</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div id="folderTree"></div>
+    <form id="folderForm">
+        <label for="folderName">Folder Name:</label>
+        <input type="text" id="folderName" name="folderName">
+        <button type="button" onclick="addFolder()">Add Folder</button>
+    </form>
+    <form id="fileForm">
+        <label for="fileName">File Name:</label>
+        <input type="text" id="fileName" name="fileName">
+        <button type="button" onclick="addFile()">Add File</button>
+    </form>
+    <button type="button" onclick="removeFolder()">Remove Folder</button>
+    <button type="button" onclick="removeFile()">Remove File</button>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

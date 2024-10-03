@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script>
+        // ประกาศตัวแปร x, y, z
+        const x = [-3, -2, -1, 0, 1, 2, 3];
+        const y = [];
+        const z = [];
+
+        // คำนวณค่า y และ z จากสมการ
+        for (let i = 0; i < x.length; i++) {
+            y[i] = 0.5 * x[i] + 2;
+            z[i] = -1 * x[i] + 5;
+        }
+
+        // สร้างกราฟ
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line', // ใช้ 'scatter' เพื่อสร้างกราฟจุด
+            data: {
+                labels: x,
+                datasets: [
+                    {
+                        label: 'y = 0.5x + 2',
+                        data: y,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                    },
+                    {
+                        label: 'z = -1x + 5',
+                        data: z,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    },
+                    y: {
+                        min: Math.min(...y, ...z) - 1,
+                        max: Math.max(...y, ...z) + 1
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
